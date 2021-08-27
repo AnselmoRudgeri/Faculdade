@@ -17,6 +17,5 @@ use App\Http\Controllers\GestaoController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/{dados}', function ($dados) {
-    return view('print'.$dados);
-});
+Route::post('/print','App\Http\Controllers\GestaoController@print');
+

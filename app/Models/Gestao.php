@@ -11,14 +11,19 @@ class Gestao extends Model
     {
       if ($dados['hierarquia'] == "professor" || $dados['hierarquia'] == "Professor" || $dados['hierarquia'] == "PROFESSOR" ) {
           $resposta['hierarquia'] = "Professor";
-          $resposta['prazo'] = "Você tem 10 dias para a devolução deste Livro";
+          $resposta['prazo'] = "Voce tem 10 dias para a devolucao deste Livro";
           $resposta['livro'] = $dados['livro'];
-          return view('logado',$resposta);
+          echo "<strong>Tipo de Usuário:</strong> ".$resposta['hierarquia'], "<br>" ;
+          echo "<strong>Nome do Livro:</strong> ".$resposta['livro'], "<br>" ;
+          echo "<strong>Prazo devolução:</strong> ".$resposta['prazo'], "<br>" ;
+
       } else if ($dados['hierarquia'] == "aluno" || $dados['hierarquia'] == "Aluno" || $dados['hierarquia'] == "ALUNO") {
           $resposta['hierarquia'] = "Aluno";
-          $resposta['prazo'] = "Você tem 3 dias para a devolução deste Livro";
+          $resposta['prazo'] = "Voce tem 3 dias para a devolucao deste Livro";
           $resposta['livro'] = $dados['livro'];
-          return view('logado',$resposta);
+          echo "<strong>Tipo de Usuário:</strong> ".$resposta['hierarquia'], "<br>" ;
+          echo "<strong>Nome do Livro:</strong> ".$resposta['livro'], "<br>" ;
+          echo "<strong>Prazo devolução:</strong> ".$resposta['prazo'], "<br>" ;
       }
     }
 
